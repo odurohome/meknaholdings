@@ -4,7 +4,7 @@ A project for managing holdings and investments.
 
 ## Overview
 
-Welcome to Mekna Holdings! This project provides tools and utilities for [describe the main purpose and functionality of your project].
+Welcome to Mekna Holdings! This project provides tools and utilities for running Mekna Holdings Inc. We are a two-division company dedicated to excellence in real estate and business technology.
 
 ## Features
 
