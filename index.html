@@ -406,6 +406,41 @@
   .property-link { font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); text-decoration: none; font-weight: 500; transition: color .25s; }
   .property-link:hover { color: var(--navy); }
 
+  /* ── HOME VALUE ── */
+  #homevalue { background: var(--navy); }
+  #homevalue h2 { color: var(--white); }
+  #homevalue .section-rule { background: var(--gold); }
+  .homevalue-intro { font-size: 1.1rem; font-weight: 300; color: rgba(253,251,247,.7); line-height: 1.9; text-align: center; margin-bottom: 3.5rem; max-width: 700px; margin-left: auto; margin-right: auto; }
+  .homevalue-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1100px; margin: 0 auto; }
+  .homevalue-card {
+    background: var(--navy-mid);
+    padding: 2.5rem 2rem;
+    transition: transform .3s, background .3s;
+    border: 1px solid rgba(201,168,76,.15);
+    display: flex; flex-direction: column;
+    gap: 1.2rem;
+  }
+  .homevalue-card:hover { background: var(--navy-light); transform: translateY(-4px); }
+  .homevalue-card h3 {
+    font-family: var(--serif);
+    font-size: 1.35rem; font-weight: 400;
+    color: var(--gold); margin: 0;
+  }
+  .homevalue-card p { font-size: .92rem; font-weight: 300; color: rgba(253,251,247,.6); line-height: 1.7; margin: 0; }
+  .homevalue-card a {
+    font-family: var(--sans);
+    font-size: .75rem; font-weight: 500;
+    letter-spacing: .12em; text-transform: uppercase;
+    color: var(--navy); background: var(--gold);
+    padding: .85rem 1.8rem; text-decoration: none;
+    transition: background .25s, transform .2s;
+    display: inline-block;
+    align-self: flex-start;
+    cursor: pointer;
+    border: none;
+  }
+  .homevalue-card a:hover { background: var(--gold-light); transform: translateY(-1px); }
+
   /* ── CONTACT ── */
   #contact { background: var(--navy); }
   #contact h2 { color: var(--white); }
@@ -553,6 +588,7 @@
     section { padding: 4rem 5%; }
     #home { margin-top: 0; }
     .back-to-top { bottom: 1rem; right: 1rem; }
+    .homevalue-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -565,6 +601,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#properties">Properties</a></li>
+    <li><a href="#homevalue">Home Value</a></li>
     <li><a href="#technology">Technology</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -581,6 +618,7 @@
   <a href="#about" class="mobile-link">About</a>
   <a href="#services" class="mobile-link">Services</a>
   <a href="#properties" class="mobile-link">Properties</a>
+  <a href="#homevalue" class="mobile-link">Home Value</a>
   <a href="#technology" class="mobile-link">Technology</a>
   <a href="#contact" class="mobile-link">Contact</a>
   <a href="#contact" class="nav-cta">Enquire Now</a>
@@ -772,6 +810,33 @@
           </div>
           <a href="#contact" class="property-link">Enquire →</a>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOME VALUE -->
+<section id="homevalue">
+  <div style="max-width:1100px; margin:0 auto;">
+    <div class="section-eyebrow" style="color:var(--gold)">Valuation Services</div>
+    <h2>Know the Value of <em>Your Home</em> Before Selling</h2>
+    <div class="section-rule"></div>
+    <p class="homevalue-intro">Discover what your property is truly worth in today's market with our expert valuation tools and professional guidance.</p>
+    <div class="homevalue-grid reveal">
+      <div class="homevalue-card">
+        <h3>My Home Value</h3>
+        <p>Use our professional value estimator to get an instant, accurate assessment of your property's worth.</p>
+        <a href="#homevalue-form">Get Valuation</a>
+      </div>
+      <div class="homevalue-card">
+        <h3>Sell Your Home</h3>
+        <p>Work with top listing agents who specialize in premium properties and know how to maximize your returns.</p>
+        <a href="#contact">Learn More</a>
+      </div>
+      <div class="homevalue-card">
+        <h3>Rent or Lease</h3>
+        <p>Find the right lease for your budget and discover income-generating opportunities with our rental solutions.</p>
+        <a href="#contact">Contact Us</a>
       </div>
     </div>
   </div>
