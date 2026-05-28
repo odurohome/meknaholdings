@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mekna Holdings Inc. — Premium Real Estate Investment, Acquisition & Portfolio Management. Strategic real estate solutions for discerning clients.">
 <title>Mekna Holdings Inc. — Premium Real Estate</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -85,6 +86,9 @@
     cursor: pointer;
     z-index: 101;
     gap: 5px;
+    background: none;
+    border: none;
+    padding: 0;
   }
   .hamburger span {
     width: 24px;
@@ -141,12 +145,44 @@
     margin-top: 1rem;
   }
 
+  /* ── BACK TO TOP ── */
+  .back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 50;
+    width: 44px;
+    height: 44px;
+    background: var(--gold);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s;
+    opacity: 0;
+  }
+  .back-to-top:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .back-to-top.visible {
+    display: flex;
+    opacity: 1;
+  }
+  .back-to-top svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--navy);
+    fill: none;
+    stroke-width: 2;
+  }
+
   /* ── HERO ── */
   #home {
     min-height: 100vh;
     background: var(--navy);
     display: flex; align-items: center;
     position: relative; overflow: hidden;
+    margin-top: 60px;
   }
   .hero-bg {
     position: absolute; inset: 0;
@@ -196,6 +232,8 @@
     padding: 1rem 2.2rem; text-decoration: none;
     transition: background .25s, transform .2s;
     display: inline-block;
+    border: none;
+    cursor: pointer;
   }
   .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
   .btn-outline {
@@ -207,6 +245,8 @@
     padding: 1rem 2.2rem; text-decoration: none;
     transition: border-color .25s, color .25s;
     display: inline-block;
+    background: none;
+    cursor: pointer;
   }
   .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
   .hero-stats {
@@ -420,9 +460,9 @@
   }
   .footer-logo { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--white); }
   .footer-logo span { color: var(--gold); }
-  .footer-copy { font-size: .75rem; color: rgba(253,251,247,.3); letter-spacing: .05em; }
+  .footer-copy { font-size: .75rem; color: rgba(253,251,247,.5); letter-spacing: .05em; }
   .footer-links { display: flex; gap: 1.8rem; }
-  .footer-links a { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: rgba(253,251,247,.35); text-decoration: none; transition: color .25s; }
+  .footer-links a { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: rgba(253,251,247,.5); text-decoration: none; transition: color .25s; }
   .footer-links a:hover { color: var(--gold); }
 
   /* ── TECHNOLOGY ── */
@@ -510,6 +550,9 @@
     .form-row { grid-template-columns: 1fr; }
     footer { flex-direction: column; text-align: center; }
     .about-values { grid-template-columns: 1fr; }
+    section { padding: 4rem 5%; }
+    #home { margin-top: 0; }
+    .back-to-top { bottom: 1rem; right: 1rem; }
   }
 </style>
 </head>
@@ -525,11 +568,11 @@
     <li><a href="#technology">Technology</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <div class="hamburger" id="hamburger">
+  <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
     <span></span>
     <span></span>
     <span></span>
-  </div>
+  </button>
   <a href="#contact" class="nav-cta">Enquire Now</a>
 </nav>
 
@@ -542,6 +585,11 @@
   <a href="#contact" class="mobile-link">Contact</a>
   <a href="#contact" class="nav-cta">Enquire Now</a>
 </div>
+
+<!-- BACK TO TOP BUTTON -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24"><path d="M12 5v14m7-7l-7-7-7 7"/></svg>
+</button>
 
 <!-- HERO -->
 <section id="home">
@@ -590,8 +638,8 @@
       <div class="section-eyebrow">About Us</div>
       <h2>Built on <em>integrity,</em> driven by opportunity</h2>
       <div class="section-rule"></div>
-      <p>Mekna Holdings Inc. is a registered real estate holdings company committed to identifying, acquiring, and managing premium properties that generate enduring value for our clients and partners.
-      <p>We combine deep market insight with a disciplined investment approach — whether you are looking to buy, sell, lease, or invest in real estate, our team provides expert guidance every step of the way.
+      <p>Mekna Holdings Inc. is a registered real estate holdings company committed to identifying, acquiring, and managing premium properties that generate enduring value for our clients and partners.</p>
+      <p>We combine deep market insight with a disciplined investment approach — whether you are looking to buy, sell, lease, or invest in real estate, our team provides expert guidance every step of the way.</p>
       <div class="about-values">
         <div class="value-item">
           <strong>Integrity</strong>
@@ -736,7 +784,7 @@
       <div class="section-eyebrow">Technology Division</div>
       <h2>Real Estate, <em>Reimagined</em> by Technology</h2>
       <div class="section-rule"></div>
-      <p>Through our technology division, Mekna Holdings provides modern software and AI-powered solutions designed to help real estate agents and brokerages operate more efficiently and grow their business.
+      <p>Through our technology division, Mekna Holdings provides modern software and AI-powered solutions designed to help real estate agents and brokerages operate more efficiently and grow their business.</p>
       <p>By combining real estate expertise with innovative technology, we empower both property owners and real estate professionals to achieve stronger results in a rapidly evolving market.</p>
       <ul class="tech-solutions">
         <li>Improve marketing visibility and lead generation</li>
@@ -752,7 +800,7 @@
       <div class="tech-cards">
         <div class="tech-card">
           <div class="tech-card-icon">
-            <svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" fill="none" stroke-width="1.5"/></svg>
           </div>
           <div>
             <div class="tech-card-title">AI-Powered Lead Engine</div>
@@ -761,16 +809,16 @@
         </div>
         <div class="tech-card">
           <div class="tech-card-icon">
-            <svg viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v10"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v10" stroke="currentColor" fill="none" stroke-width="1.5"/></svg>
           </div>
           <div>
-            <div class="tech-card-title">Marketing & Visibility</div>
+            <div class="tech-card-title">Marketing &amp; Visibility</div>
             <div class="tech-card-sub">Multi-channel digital marketing tools</div>
           </div>
         </div>
         <div class="tech-card">
           <div class="tech-card-icon">
-            <svg viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" stroke="currentColor" fill="none" stroke-width="1.5"/></svg>
           </div>
           <div>
             <div class="tech-card-title">Client Communication Suite</div>
@@ -779,7 +827,7 @@
         </div>
         <div class="tech-card">
           <div class="tech-card-icon">
-            <svg viewBox="0 0 24 24"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" stroke="currentColor" fill="none" stroke-width="1.5"/></svg>
           </div>
           <div>
             <div class="tech-card-title">Workflow Automation</div>
@@ -832,21 +880,21 @@
       <form class="contact-form reveal" onsubmit="handleSubmit(event)">
         <div class="form-row">
           <div class="form-group">
-            <label>First Name</label>
-            <input type="text" placeholder="John" required>
+            <label for="firstName">First Name</label>
+            <input id="firstName" type="text" placeholder="John" required>
           </div>
           <div class="form-group">
-            <label>Last Name</label>
-            <input type="text" placeholder="Smith" required>
+            <label for="lastName">Last Name</label>
+            <input id="lastName" type="text" placeholder="Smith" required>
           </div>
         </div>
         <div class="form-group">
-          <label>Email Address</label>
-          <input type="email" placeholder="john@example.com" required>
+          <label for="email">Email Address</label>
+          <input id="email" type="email" placeholder="john@example.com" required>
         </div>
         <div class="form-group">
-          <label>Enquiry Type</label>
-          <select required>
+          <label for="enquiry">Enquiry Type</label>
+          <select id="enquiry" required>
             <option value="" disabled selected>Select a service…</option>
             <option>Property Investment</option>
             <option>Buy / Acquire Property</option>
@@ -857,8 +905,8 @@
           </select>
         </div>
         <div class="form-group">
-          <label>Message</label>
-          <textarea rows="4" placeholder="Tell us about your goals…" required></textarea>
+          <label for="message">Message</label>
+          <textarea id="message" rows="4" placeholder="Tell us about your goals…" required></textarea>
         </div>
         <button type="submit" class="form-submit">Send Enquiry</button>
         <div id="form-msg" style="font-size:.82rem;color:var(--gold);margin-top:.5rem;display:none;">Thank you — we'll be in touch shortly.</div>
@@ -887,6 +935,7 @@
 
   hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
+    hamburger.setAttribute('aria-expanded', hamburger.classList.contains('active'));
     mobileMenu.classList.toggle('active');
   });
 
@@ -894,6 +943,7 @@
   mobileLinks.forEach(link => {
     link.addEventListener('click', () => {
       hamburger.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
       mobileMenu.classList.remove('active');
     });
   });
@@ -902,8 +952,22 @@
   document.querySelectorAll('.mobile-menu .nav-cta').forEach(btn => {
     btn.addEventListener('click', () => {
       hamburger.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
       mobileMenu.classList.remove('active');
     });
+  });
+
+  // Back to top button
+  const backToTopBtn = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTopBtn.classList.add('visible');
+    } else {
+      backToTopBtn.classList.remove('visible');
+    }
+  });
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
   // Scroll reveal
