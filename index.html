@@ -76,6 +76,8 @@
     text-decoration: none;
     font-weight: 500;
     transition: background .25s;
+    border: none;
+    cursor: pointer;
   }
   .nav-cta:hover { background: var(--gold-light); }
 
@@ -441,6 +443,226 @@
   }
   .homevalue-card a:hover { background: var(--gold-light); transform: translateY(-1px); }
 
+  /* ── VALUATION MODAL ── */
+  .valuation-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 5%;
+    overflow-y: auto;
+  }
+  .valuation-modal.active {
+    display: flex;
+  }
+  .valuation-modal-content {
+    background: var(--white);
+    padding: 3rem 2.5rem;
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    border-radius: 4px;
+  }
+  .valuation-modal-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--navy);
+    transition: color .25s;
+  }
+  .valuation-modal-close:hover { color: var(--gold); }
+  .valuation-modal-header {
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+  .valuation-modal-header h3 {
+    font-family: var(--serif);
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--navy);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
+  .valuation-modal-intro {
+    font-size: .95rem;
+    font-weight: 300;
+    color: #555;
+    line-height: 1.8;
+  }
+
+  /* ── VALUATION FORM ── */
+  .valuation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+  .form-group label {
+    font-size: .85rem;
+    font-weight: 500;
+    color: var(--navy);
+    letter-spacing: .05em;
+  }
+  .form-group label .required {
+    color: var(--gold);
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: var(--white);
+    border: 1px solid #ddd;
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: .9rem;
+    font-weight: 300;
+    padding: .9rem 1rem;
+    outline: none;
+    transition: border-color .25s, box-shadow .25s;
+    resize: none;
+    -webkit-appearance: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1);
+  }
+  .form-group select option {
+    background: var(--white);
+    color: var(--text);
+  }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: #999;
+  }
+
+  /* ── FORM ROW ── */
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .form-row-three {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  /* ── RADIO GROUP ── */
+  .radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    margin-top: .5rem;
+  }
+  .radio-item {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    cursor: pointer;
+  }
+  .radio-item input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--gold);
+  }
+  .radio-item label {
+    margin: 0;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: .9rem;
+  }
+
+  /* ── CHECKBOX GROUP ── */
+  .checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: .8rem;
+    margin-top: .5rem;
+  }
+  .checkbox-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--gold);
+    margin-top: .25rem;
+    flex-shrink: 0;
+  }
+  .checkbox-group label {
+    margin: 0;
+    cursor: pointer;
+    font-size: .85rem;
+    line-height: 1.5;
+    color: #666;
+    font-weight: 300;
+  }
+
+  /* ── FORM SECTION TITLE ── */
+  .form-section-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--navy);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+  }
+
+  /* ── FORM SUBMIT ── */
+  .valuation-form-submit {
+    font-family: var(--sans);
+    font-size: .78rem;
+    font-weight: 500;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    background: var(--gold);
+    color: var(--navy);
+    border: none;
+    padding: 1.1rem 2.5rem;
+    cursor: pointer;
+    transition: background .25s, transform .2s;
+    margin-top: 1rem;
+    align-self: center;
+  }
+  .valuation-form-submit:hover {
+    background: var(--gold-light);
+    transform: translateY(-1px);
+  }
+
+  /* ── LEGAL TEXT ── */
+  .legal-text {
+    font-size: .75rem;
+    color: #666;
+    line-height: 1.6;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+  }
+  .legal-text strong {
+    color: var(--navy);
+    font-weight: 500;
+  }
+
   /* ── CONTACT ── */
   #contact { background: var(--navy); }
   #contact h2 { color: var(--white); }
@@ -583,12 +805,20 @@
     .about-grid { grid-template-columns: 1fr; gap: 3rem; }
     .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
     .form-row { grid-template-columns: 1fr; }
+    .form-row-three { grid-template-columns: 1fr; }
     footer { flex-direction: column; text-align: center; }
     .about-values { grid-template-columns: 1fr; }
     section { padding: 4rem 5%; }
     #home { margin-top: 0; }
     .back-to-top { bottom: 1rem; right: 1rem; }
     .homevalue-grid { grid-template-columns: 1fr; }
+    .valuation-modal-content {
+      max-height: 95vh;
+      padding: 2rem 1.5rem;
+    }
+    .radio-group {
+      gap: 1rem;
+    }
   }
 </style>
 </head>
@@ -628,6 +858,198 @@
 <button class="back-to-top" id="backToTop" aria-label="Back to top">
   <svg viewBox="0 0 24 24"><path d="M12 5v14m7-7l-7-7-7 7"/></svg>
 </button>
+
+<!-- VALUATION MODAL -->
+<div class="valuation-modal" id="valuationModal">
+  <div class="valuation-modal-content">
+    <button class="valuation-modal-close" id="valuationModalClose">&times;</button>
+    <div class="valuation-modal-header">
+      <h3>Get Your Home Valuation</h3>
+      <p class="valuation-modal-intro">Interested in finding out what your home is worth? Get a no-obligation property valuation report by providing your information below.</p>
+    </div>
+    
+    <form class="valuation-form" id="valuationForm" onsubmit="handleValuationSubmit(event)">
+      <!-- Contact Info -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="val-email">Email <span class="required">*</span></label>
+          <input id="val-email" type="email" placeholder="john@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="val-name">Name <span class="required">*</span></label>
+          <input id="val-name" type="text" placeholder="John Smith" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="val-phone">Phone <span class="required">*</span></label>
+          <input id="val-phone" type="tel" placeholder="(555) 123-4567" required>
+        </div>
+        <div class="form-group">
+          <label for="val-address">Address <span class="required">*</span></label>
+          <input id="val-address" type="text" placeholder="123 Main Street" required>
+        </div>
+      </div>
+
+      <!-- Location -->
+      <div class="form-row-three">
+        <div class="form-group">
+          <label for="val-city">City <span class="required">*</span></label>
+          <input id="val-city" type="text" placeholder="New York" required>
+        </div>
+        <div class="form-group">
+          <label for="val-state">State <span class="required">*</span></label>
+          <input id="val-state" type="text" placeholder="NY" required>
+        </div>
+        <div class="form-group">
+          <label for="val-zip">Zip <span class="required">*</span></label>
+          <input id="val-zip" type="text" placeholder="10001" required>
+        </div>
+      </div>
+
+      <!-- Property Details -->
+      <div class="form-section-title">Property Details</div>
+      
+      <div class="form-group">
+        <label for="val-property-type">Property Type</label>
+        <select id="val-property-type">
+          <option value="House">House</option>
+          <option value="Condo">Condo</option>
+          <option value="Townhouse">Townhouse</option>
+          <option value="Commercial">Commercial</option>
+          <option value="Multi-Family">Multi-Family</option>
+          <option value="Land">Land</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <!-- Condition of Property -->
+      <div class="form-group">
+        <label>Condition of Property</label>
+        <div class="radio-group">
+          <div class="radio-item">
+            <input type="radio" id="val-excellent" name="val-condition" value="Excellent">
+            <label for="val-excellent">Excellent</label>
+          </div>
+          <div class="radio-item">
+            <input type="radio" id="val-good" name="val-condition" value="Good">
+            <label for="val-good">Good</label>
+          </div>
+          <div class="radio-item">
+            <input type="radio" id="val-fair" name="val-condition" value="Fair">
+            <label for="val-fair">Fair</label>
+          </div>
+          <div class="radio-item">
+            <input type="radio" id="val-needs-work" name="val-condition" value="Needs Work">
+            <label for="val-needs-work">Needs Work</label>
+          </div>
+          <div class="radio-item">
+            <input type="radio" id="val-poor" name="val-condition" value="Poor">
+            <label for="val-poor">Poor</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bedrooms -->
+      <div class="form-group">
+        <label>Bedrooms</label>
+        <div class="radio-group">
+          <div class="radio-item">
+            <input type="radio" id="val-bed-1" name="val-bedrooms" value="1">
+            <label for="val-bed-1">1</label>
+          </div>
+          <div class="radio-item">
+            <input type="radio" id="val-bed-2" name="val-bedrooms" value="2">
+            <label for="val-bed-2">2</label>
+          </div>
+          <div class="radio-item">
+            <input type="radio" id="val-bed-3" name="val-bedrooms" value="3">
+            <label for="val-bed-3">3</label>
+          </div>
+          <div class="radio-item">
+            <input type="radio" id="val-bed-4" name="val-bedrooms" value="4">
+            <label for="val-bed-4">4</label>
+          </div>
+          <div class="radio-item">
+            <input type="radio" id="val-bed-5plus" name="val-bedrooms" value="5+">
+            <label for="val-bed-5plus">5+</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bathrooms -->
+      <div class="form-group">
+        <label>Bathrooms</label>
+        <div class="radio-group">
+          <div class="radio-item">
+            <input type="radio" id="val-bath-1" name="val-bathrooms" value="1">
+            <label for="val-bath-1">1</label>
+          </div>
+          <div class="radio-item">
+            <input type="radio" id="val-bath-2" name="val-bathrooms" value="2">
+            <label for="val-bath-2">2</label>
+          </div>
+          <div class="radio-item">
+            <input type="radio" id="val-bath-3" name="val-bathrooms" value="3">
+            <label for="val-bath-3">3</label>
+          </div>
+          <div class="radio-item">
+            <input type="radio" id="val-bath-4" name="val-bathrooms" value="4">
+            <label for="val-bath-4">4</label>
+          </div>
+          <div class="radio-item">
+            <input type="radio" id="val-bath-5plus" name="val-bathrooms" value="5+">
+            <label for="val-bath-5plus">5+</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Rooms/Features -->
+      <div class="form-group">
+        <label for="val-additional">Additional Rooms/Features</label>
+        <p style="font-size: .85rem; color: #666; margin-bottom: .8rem; font-weight: 300;">Please list additional rooms and describe any special features and upgrades. For example: new roof, custom kitchen, near park, etc.</p>
+        <textarea id="val-additional" rows="5" placeholder="Describe additional features..."></textarea>
+      </div>
+
+      <!-- Size & Age -->
+      <div class="form-row-three">
+        <div class="form-group">
+          <label for="val-size">Approx. Size <span style="font-size: .8rem; color: #999;">(Sq. Ft.)</span></label>
+          <input id="val-size" type="number" placeholder="2500">
+        </div>
+        <div class="form-group">
+          <label for="val-kitchen-age">Approx. Age of Kitchen</label>
+          <input id="val-kitchen-age" type="text" placeholder="5 years">
+        </div>
+        <div class="form-group">
+          <label for="val-bath-age">Approx. Age of Baths</label>
+          <input id="val-bath-age" type="text" placeholder="3 years">
+        </div>
+      </div>
+
+      <!-- Comments -->
+      <div class="form-group">
+        <label for="val-comments">Comments <span class="required">*</span></label>
+        <textarea id="val-comments" rows="4" placeholder="Any additional information..." required></textarea>
+      </div>
+
+      <!-- Marketing Consent Checkbox -->
+      <div class="checkbox-group">
+        <input type="checkbox" id="val-marketing-consent">
+        <label for="val-marketing-consent">By selecting this checkbox and entering your mobile number, you agree to receive marketing text messages and calls from Mekna Holdings, including messages about real estate listings, property recommendations, and related services. Message and data rates may apply. Message frequency varies. Reply HELP for help or STOP to cancel.</label>
+      </div>
+
+      <!-- Legal Disclaimer -->
+      <div class="legal-text">
+        <strong>Your personal information is strictly confidential</strong> and will not be shared with any outside organizations. By submitting this form with your telephone number you are consenting to Mekna Holdings and authorized representatives to contact you even if your name is on the Federal "Do-not-call List."
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="valuation-form-submit">Send Request</button>
+    </form>
+  </div>
+</div>
 
 <!-- HERO -->
 <section id="home">
@@ -826,7 +1248,7 @@
       <div class="homevalue-card">
         <h3>My Home Value</h3>
         <p>Use our professional value estimator to get an instant, accurate assessment of your property's worth.</p>
-        <a href="#homevalue-form">Get Valuation</a>
+        <a href="#" onclick="openValuationModal(event)">Get Valuation</a>
       </div>
       <div class="homevalue-card">
         <h3>Sell Your Home</h3>
@@ -874,7 +1296,7 @@
         </div>
         <div class="tech-card">
           <div class="tech-card-icon">
-            <svg viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v10" stroke="currentColor" fill="none" stroke-width="1.5"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke="currentColor" fill="none" stroke-width="1.5"/></svg>
           </div>
           <div>
             <div class="tech-card-title">Marketing &amp; Visibility</div>
@@ -925,7 +1347,7 @@
         </div>
         <div class="contact-detail">
           <div class="contact-detail-icon">
-            <svg viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1a21 21 0 01-21-21v-1a2 2 0 012-2h.5z"/></svg>
           </div>
           <div>
             <div class="contact-detail-label">Phone</div>
@@ -993,73 +1415,140 @@
 </footer>
 
 <script>
-  // Hamburger menu toggle
+  // ── HAMBURGER MENU TOGGLE ──
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
   const mobileLinks = document.querySelectorAll('.mobile-link');
 
   hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
-    hamburger.setAttribute('aria-expanded', hamburger.classList.contains('active'));
     mobileMenu.classList.toggle('active');
+    hamburger.setAttribute('aria-expanded', hamburger.classList.contains('active'));
   });
 
-  // Close menu when a link is clicked
   mobileLinks.forEach(link => {
     link.addEventListener('click', () => {
       hamburger.classList.remove('active');
-      hamburger.setAttribute('aria-expanded', 'false');
       mobileMenu.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', false);
     });
   });
 
-  // Close menu when Enquire Now is clicked
-  document.querySelectorAll('.mobile-menu .nav-cta').forEach(btn => {
-    btn.addEventListener('click', () => {
-      hamburger.classList.remove('active');
-      hamburger.setAttribute('aria-expanded', 'false');
-      mobileMenu.classList.remove('active');
-    });
-  });
+  // ── BACK TO TOP BUTTON ──
+  const backToTop = document.getElementById('backToTop');
 
-  // Back to top button
-  const backToTopBtn = document.getElementById('backToTop');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 300) {
-      backToTopBtn.classList.add('visible');
+      backToTop.classList.add('visible');
     } else {
-      backToTopBtn.classList.remove('visible');
+      backToTop.classList.remove('visible');
     }
   });
-  backToTopBtn.addEventListener('click', () => {
+
+  backToTop.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 80);
-        observer.unobserve(e.target);
+  // ── SCROLL REVEAL ANIMATION ──
+  const revealElements = document.querySelectorAll('.reveal');
+
+  const revealOnScroll = () => {
+    revealElements.forEach(element => {
+      const elementTop = element.getBoundingClientRect().top;
+      const elementBottom = element.getBoundingClientRect().bottom;
+
+      if (elementTop < window.innerHeight && elementBottom > 0) {
+        element.classList.add('visible');
       }
     });
-  }, { threshold: 0.1 });
-  reveals.forEach(r => observer.observe(r));
+  };
 
-  // Nav scroll effect
-  window.addEventListener('scroll', () => {
-    document.querySelector('nav').style.padding =
-      window.scrollY > 60 ? '.9rem 5%' : '1.4rem 5%';
+  window.addEventListener('scroll', revealOnScroll);
+  revealOnScroll();
+
+  // ── CONTACT FORM SUBMISSION ──
+  function handleSubmit(event) {
+    event.preventDefault();
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
+    const email = document.getElementById('email').value;
+    const enquiry = document.getElementById('enquiry').value;
+    const message = document.getElementById('message').value;
+
+    console.log('Contact Form Submitted:', { firstName, lastName, email, enquiry, message });
+
+    const formMsg = document.getElementById('form-msg');
+    formMsg.style.display = 'block';
+
+    event.target.reset();
+    setTimeout(() => {
+      formMsg.style.display = 'none';
+    }, 3000);
+  }
+
+  // ── VALUATION MODAL ──
+  const valuationModal = document.getElementById('valuationModal');
+  const valuationModalClose = document.getElementById('valuationModalClose');
+  const valuationForm = document.getElementById('valuationForm');
+
+  function openValuationModal(event) {
+    event.preventDefault();
+    valuationModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeValuationModal() {
+    valuationModal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
+
+  valuationModalClose.addEventListener('click', closeValuationModal);
+
+  valuationModal.addEventListener('click', (event) => {
+    if (event.target === valuationModal) {
+      closeValuationModal();
+    }
   });
 
-  // Form
-  function handleSubmit(e) {
-    e.preventDefault();
-    const msg = document.getElementById('form-msg');
-    msg.style.display = 'block';
-    e.target.reset();
-    setTimeout(() => msg.style.display = 'none', 5000);
+  // Close on Escape key
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && valuationModal.classList.contains('active')) {
+      closeValuationModal();
+    }
+  });
+
+  // ── VALUATION FORM SUBMISSION ──
+  function handleValuationSubmit(event) {
+    event.preventDefault();
+
+    const formData = {
+      email: document.getElementById('val-email').value,
+      name: document.getElementById('val-name').value,
+      phone: document.getElementById('val-phone').value,
+      address: document.getElementById('val-address').value,
+      city: document.getElementById('val-city').value,
+      state: document.getElementById('val-state').value,
+      zip: document.getElementById('val-zip').value,
+      propertyType: document.getElementById('val-property-type').value,
+      condition: document.querySelector('input[name="val-condition"]:checked')?.value,
+      bedrooms: document.querySelector('input[name="val-bedrooms"]:checked')?.value,
+      bathrooms: document.querySelector('input[name="val-bathrooms"]:checked')?.value,
+      additional: document.getElementById('val-additional').value,
+      size: document.getElementById('val-size').value,
+      kitchenAge: document.getElementById('val-kitchen-age').value,
+      bathAge: document.getElementById('val-bath-age').value,
+      comments: document.getElementById('val-comments').value,
+      marketingConsent: document.getElementById('val-marketing-consent').checked
+    };
+
+    console.log('Valuation Form Submitted:', formData);
+
+    // Reset form and close modal
+    valuationForm.reset();
+    closeValuationModal();
+
+    // Show success message
+    alert('Thank you for your submission. We will contact you shortly with your home valuation report.');
   }
 </script>
 </body>
