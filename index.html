@@ -539,6 +539,11 @@
     resize: none;
     -webkit-appearance: none;
   }
+  .form-group select {
+    -webkit-appearance: auto;
+    appearance: auto;
+    cursor: pointer;
+  }
   .form-group input:focus,
   .form-group select:focus,
   .form-group textarea:focus {
@@ -917,17 +922,23 @@
       <!-- Property Details -->
       <div class="form-section-title">Property Details</div>
       
-      <div class="form-group">
-        <label for="val-property-type">Property Type</label>
-        <select id="val-property-type">
-          <option value="House">House</option>
-          <option value="Condo">Condo</option>
-          <option value="Townhouse">Townhouse</option>
-          <option value="Commercial">Commercial</option>
-          <option value="Multi-Family">Multi-Family</option>
-          <option value="Land">Land</option>
-          <option value="Other">Other</option>
-        </select>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="val-property-type">Property Type</label>
+          <select id="val-property-type">
+            <option value="House">House</option>
+            <option value="Condo">Condo</option>
+            <option value="Townhouse">Townhouse</option>
+            <option value="Commercial">Commercial</option>
+            <option value="Multi-Family">Multi-Family</option>
+            <option value="Land">Land</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="val-size">Approximate Size</label>
+          <input id="val-size" type="number" placeholder="Sq. Ft." min="0">
+        </div>
       </div>
 
       <!-- Condition of Property -->
