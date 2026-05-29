@@ -524,7 +524,7 @@
   .form-group label .required {
     color: var(--gold);
   }
-  .form-group input,
+  .form-group input:not([type="radio"]):not([type="checkbox"]),
   .form-group select,
   .form-group textarea {
     background: var(--white);
@@ -566,7 +566,7 @@
     gap: 1.5rem;
   }
 
-  /* ── RADIO GROUP ── */
+  /* ── RADIO GROUP MARTINI ── */
   .radio-group {
     display: flex;
     flex-wrap: wrap;
@@ -585,12 +585,17 @@
     height: 20px;
     cursor: pointer;
     accent-color: var(--gold);
+    -webkit-appearance: radio;
+    appearance: radio;
+    border-radius: 50%;
+    margin: 0;
   }
   .radio-item label {
     margin: 0;
     cursor: pointer;
     font-weight: 400;
     font-size: .9rem;
+    
     color: var(--navy) !important;
   }
 
@@ -676,12 +681,12 @@
   .contact-detail-label { font-size: .65rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(253,251,247,.35); margin-bottom: .2rem; }
   .contact-detail-val { font-size: .9rem; color: var(--white); font-weight: 300; }
   .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
-  .form-group { display: flex; flex-direction: column; gap: .5rem; }
-  .form-group label { font-size: .65rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(253,251,247,.45); }
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
+  .contact-form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+  .contact-form .form-group { display: flex; flex-direction: column; gap: .5rem; }
+  .contact-form .form-group label { font-size: .65rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(253,251,247,.45); }
+  .contact-form .form-group input,
+  .contact-form .form-group select,
+  .contact-form .form-group textarea {
     background: rgba(255,255,255,.04);
     border: 1px solid rgba(201,168,76,.2);
     color: var(--white);
@@ -692,12 +697,12 @@
     resize: none;
     -webkit-appearance: none;
   }
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus { border-color: var(--gold); }
-  .form-group select option { background: var(--navy); }
-  .form-group input::placeholder,
-  .form-group textarea::placeholder { color: rgba(255,255,255,.2); }
+  .contact-form .form-group input:focus,
+  .contact-form .form-group select:focus,
+  .contact-form .form-group textarea:focus { border-color: var(--gold); }
+  .contact-form .form-group select option { background: var(--navy); }
+  .contact-form .form-group input::placeholder,
+  .contact-form .form-group textarea::placeholder { color: rgba(255,255,255,.2); }
   .form-submit {
     font-family: var(--sans); font-size: .78rem; font-weight: 500;
     letter-spacing: .12em; text-transform: uppercase;
@@ -865,7 +870,7 @@
   <div class="valuation-modal-content">
     <button class="valuation-modal-close" id="valuationModalClose">&times;</button>
     <div class="valuation-modal-header">
-      <h3>Get Your Home Valuation</h3>
+      <h3>Get Your Home Valuation MARTINI</h3>
       <p class="valuation-modal-intro">Interested in finding out what your home is worth? Get a no-obligation property valuation report by providing your information below.</p>
     </div>
     
@@ -981,7 +986,7 @@
 
       <!-- Bathrooms -->
       <div class="form-group">
-        <label>Bathrooms</label>
+        <label> <b> Bathrooms </b></label>
         <div class="radio-group">
           <div class="radio-item">
             <input type="radio" id="val-bath-1" name="val-bathrooms" value="1">
