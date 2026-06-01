@@ -436,6 +436,9 @@ h2 em { font-style: italic; }
 
 /* ── VALUATION MODAL ── */
 .valuation-modal {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
   display: none;
   position: fixed;
   top: 0;
@@ -451,6 +454,8 @@ h2 em { font-style: italic; }
 }
 .valuation-modal.active {
   display: flex;
+  opacity: 1;
+  visibility: visible;
 }
 .valuation-modal-content {
   background: var(--white);
@@ -461,6 +466,7 @@ h2 em { font-style: italic; }
   overflow-y: auto;
   position: relative;
   border-radius: 4px;
+  animation: slideUp 0.3s ease;
 }
 .valuation-modal-close {
   position: absolute;
@@ -1095,5 +1101,10 @@ footer {
   .valuation-modal-header h3 {
     font-size: 1.5rem;
   }
+  
+  /* Prevent body scroll when modal is open */
+body.modal-open {
+  overflow: hidden;
+}
 }
 }
