@@ -831,4 +831,269 @@ footer {
   .radio-group {
     gap: 1rem;
   }
+  
+  /* ── VALUATION MODAL ── */
+.valuation-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 22, 40, 0.8);
+  backdrop-filter: blur(8px);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.valuation-modal.active {
+  display: flex;
+  opacity: 1;
+}
+
+.valuation-modal-content {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 3rem;
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(10, 22, 40, 0.3);
+  animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.valuation-modal-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--text);
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.25s;
+}
+
+.valuation-modal-close:hover {
+  color: var(--gold);
+}
+
+.valuation-modal-header {
+  margin-bottom: 2rem;
+}
+
+.valuation-modal-header h3 {
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.valuation-modal-intro {
+  font-size: 0.95rem;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+/* ── FORM STYLES ── */
+.valuation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.form-row-three {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.required {
+  color: #d32f2f;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1);
+}
+
+.form-section-title {
+  font-weight: 600;
+  color: var(--navy);
+  font-size: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.radio-group,
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.radio-item,
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.radio-item input[type="radio"],
+.checkbox-item input[type="checkbox"] {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--gold);
+}
+
+.radio-item label,
+.checkbox-item label {
+  cursor: pointer;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.valuation-form-submit {
+  background: var(--gold);
+  color: var(--navy);
+  padding: 0.9rem 2rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  transition: background 0.25s, transform 0.2s;
+  margin-top: 1rem;
+  font-family: var(--sans);
+}
+
+.valuation-form-submit:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+.valuation-form-submit:active {
+  transform: translateY(0);
+}
+
+.valuation-form-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: var(--gray);
+}
+
+.form-message {
+  padding: 1rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.form-message.active {
+  display: block;
+}
+
+.form-message.success {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #c8e6c9;
+}
+
+.form-message.error {
+  background: #ffebee;
+  color: #c62828;
+  border: 1px solid #ffcdd2;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.legal-text {
+  font-size: 0.8rem;
+  color: var(--gray);
+  margin-top: 1rem;
+  line-height: 1.5;
+}
+
+/* ── RESPONSIVE FORM ── */
+@media (max-width: 768px) {
+  .valuation-modal-content {
+    padding: 1.5rem;
+    max-width: 95%;
+  }
+  
+  .form-row,
+  .form-row-three {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .valuation-modal-header h3 {
+    font-size: 1.5rem;
+  }
+}
 }
