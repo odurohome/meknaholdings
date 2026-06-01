@@ -442,12 +442,12 @@
       <div class="homevalue-card">
         <h3>Professional Appraisal</h3>
         <p>Comprehensive property assessment by certified appraisers using industry-leading methodologies and current market data.</p>
-        <a href="#" data-open-valuation>Get Valuation</a>
+        <a href="javascript:void(0)" data-open-valuation>Get Valuation</a>
       </div>
       <div class="homevalue-card">
         <h3>Market Analysis</h3>
         <p>Detailed market trends, comparable sales analysis, and neighborhood insights to contextualize your property's value.</p>
-        <a href="#" data-open-valuation>Request Report</a>
+        <a href="javascript:void(0)" data-open-valuation>Request Report</a>
       </div>
       <div class="homevalue-card">
         <h3>Investment Potential</h3>
@@ -584,7 +584,40 @@
     <a href="#">Sitemap</a>
   </div>
 </footer>
-
+<script>
+  // Valuation Modal
+  const valuationModal = document.getElementById('valuationModal');
+  const valuationModalClose = document.getElementById('valuationModalClose');
+  
+  // Open modal when clicking "Get Home Valuation" buttons
+  document.querySelectorAll('[data-open-valuation]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      valuationModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  
+  // Close modal
+  valuationModalClose.addEventListener('click', () => {
+    valuationModal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  });
+  
+  // Close on background click
+  valuationModal.addEventListener('click', (e) => {
+    if (e.target === valuationModal) {
+      valuationModal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+  });
+  
+  // Form submission handler
+  function handleValuationSubmit(event) {
+    event.preventDefault();
+    console.log('Form submitted');
+    // Add your form submission logic here
+  }
+</script>
 <script src="script.js"></script>
 </body>
 </html>
