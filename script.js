@@ -70,7 +70,7 @@ function handleContactSubmit(event) {
 const backToTopBtn = document.getElementById('backToTop');
 
 window.addEventListener('scroll', () => {
-  if (window.pageYOffset > 300) {
+  if (window.pageYOffset > 3) {
     backToTopBtn.classList.add('visible');
   } else {
     backToTopBtn.classList.remove('visible');
