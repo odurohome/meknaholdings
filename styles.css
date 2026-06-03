@@ -647,7 +647,7 @@ h2 em { font-style: italic; }
 
 .form-section-title {
   /* Martin font-size: 1rem; */
-  font-size: .63rem; uppercase;
+  font-size: .63rem; 
   font-weight: 500;
   /* Martin color: var(--navy); */
   color: var(--gold);
@@ -655,7 +655,7 @@ h2 em { font-style: italic; }
   margin-bottom: 1rem;
   padding-top: 1rem;
   /* Martin border-top: 1px solid #eee; */
-  border-top: 1px solid rgba(gold,.15);
+  border-top: 10px solid rgba(gold,.15);
 }
 
 .valuation-form-submit,
