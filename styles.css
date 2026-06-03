@@ -655,7 +655,8 @@ h2 em { font-style: italic; }
   margin-bottom: 1rem;
   padding-top: 1rem;
   /* Martin border-top: 1px solid #eee; */
-  border-top: 10px solid rgba(gold,.15);
+  /* border-top: 1px solid rgba(gold,.15); */
+  border-top: 1px solid rgba(201,168,76,.12);
 }
 
 .valuation-form-submit,
