@@ -725,7 +725,7 @@ h2 em { font-style: italic; }
 .contact-form .form-group textarea:focus { border-color: var(--gold); }
 .contact-form .form-group select option { background: var(--navy); }
 /* .contact-form .form-group input::placeholder, */
-.contact-form .form-group input::placeholder { color: rgba(255,255,255,.2); },
+.contact-form .form-group input::placeholder { color: rgba(255,255,255,.2); }
 .contact-form .form-group textarea::placeholder { color: rgba(255,255,255,.2); }
 
 /* ── FOOTER ── */
