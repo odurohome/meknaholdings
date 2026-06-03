@@ -629,7 +629,8 @@ h2 em { font-style: italic; }
   margin-top: 1.5rem;
   margin-bottom: 1rem;
   padding-top: 1rem;
-  border-top: 1px solid #eee;
+  border-top: 10px solid #eee;
+  /* border-top: 1px solid #eee; */
 }
 
 .valuation-form-submit,
