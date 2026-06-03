@@ -615,7 +615,10 @@ h2 em { font-style: italic; }
   cursor: pointer;
   font-weight: 400;
   font-size: .9rem;
-  color: var(--navy) !important;
+  /* Martin color: var(--navy) !important; */
+  color: rgba(253,251,247,.5);
+  border: 1px solid rgba(gold,.2); /* Martin */
+  padding: .45rem 1.05rem; /* Martin */
 }
 
 .checkbox-group {
