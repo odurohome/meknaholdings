@@ -552,7 +552,7 @@ h2 em { font-style: italic; }
   background: var(--white);
   color: var(--text);
 }
-.form-group input::placeholder { color: #999}
+.form-group input::placeholder { color: #999;}
 .form-group textarea::placeholder {
   color: #999;
 }
