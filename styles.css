@@ -446,9 +446,8 @@ h2 em { font-style: italic; }
   left: 0;
   right: 0;
   bottom: 0;
- /* Martin background: rgba(0, 0, 0, 0.6); */
   background: rgba(4, 10, 20, 0.85);
-  backdrop-filter: blur(6px); /* Martin */
+  backdrop-filter: blur(6px); 
   z-index: 200;
   align-items: center;
   justify-content: center;
@@ -461,7 +460,6 @@ h2 em { font-style: italic; }
   visibility: visible;
 }
 .valuation-modal-content {
-  /* Martin background: var(--white); */
   background: var(--navy);
   padding: 3rem 2.5rem;
   max-width: 900px;
@@ -469,10 +467,9 @@ h2 em { font-style: italic; }
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
-  /* Martin border-radius: 4px; */
   border: 1px solid rgba(201,168,76,.25);
   animation: slideUp 0.3s ease;
-  scrollbar-color: rgba(201,168,76,.3) transparent; /* Martin */
+  scrollbar-color: rgba(201,168,76,.3) transparent; 
 }
 .valuation-modal-close {
   position: absolute;
@@ -481,12 +478,9 @@ h2 em { font-style: italic; }
   width: 32px;
   height: 32px;
   background: none;
-  /* Martin border: none; */
   border: 1px solid rgba(201,168,76,.25);
-  /* Martin font-size: 2rem; */
   font-size: 1.3rem;
   cursor: pointer;
-  /* Martin color: var(--navy); */
   color: rgba(253,251,247,.5); /* border animates to gold on hover */
   transition: color .25s;
 }
@@ -497,10 +491,8 @@ h2 em { font-style: italic; }
 }
 .valuation-modal-header h3 {
   font-family: var(--serif);
-  /* Martin font-size: 1.8rem; */
   font-size: 2rem;
   font-weight: 300;
-  /* Martin color: var(--navy); */
   color: var(--white);
   margin-bottom: 1rem;
   line-height: 1.4;
@@ -508,10 +500,9 @@ h2 em { font-style: italic; }
 .valuation-modal-intro {
   font-size: .95rem;
   font-weight: 300;
-  /* Martin color: #555; */
   color: rgba(253,251,247,.5);
   line-height: 1.8;
-  border-bottom: 1px solid rgba(201,168,76,.15); /* Martin */
+  border-bottom: 1px solid rgba(201,168,76,.15); 
 }
 
 /* ── FORM ELEMENTS ── */
@@ -526,10 +517,8 @@ h2 em { font-style: italic; }
   gap: .5rem;
 }
 .form-group label {
-  /* Martin font-size: .85rem; */
   font-size: .63rem;
   font-weight: 500;
-  /* Martin color: var(--navy); */
   color: rgba(253,251,247,.45);
   letter-spacing: .05em;
   text-transform: uppercase; /* Martin */
@@ -540,11 +529,8 @@ h2 em { font-style: italic; }
 .form-group input:not([type="radio"]):not([type="checkbox"]),
 .form-group select,
 .form-group textarea {
-  /* Martin background: var(--white); */
   background: rgba(255,255,255,.04);
-  /* Martin border: 1px solid #ddd; */
   border: rgba(201,168,76,.18);
-  /* Martin color: var(--text); */
   color: var(--white);
   font-family: var(--sans);
   font-size: .9rem;
@@ -572,7 +558,6 @@ h2 em { font-style: italic; }
 }
 .form-group input,
 .form-group textarea::placeholder {
-  /* Martin color: #999; */
   color: rgba(255,255,255,.2);
 }
 
@@ -615,10 +600,9 @@ h2 em { font-style: italic; }
   cursor: pointer;
   font-weight: 400;
   font-size: .9rem;
-  /* Martin color: var(--navy) !important; */
   color: rgba(253,251,247,.5);
-  border: 1px solid rgba(gold,.2); /* Martin */
-  padding: .45rem 1.05rem; /* Martin */
+  border: 1px solid rgba(gold,.2); 
+  padding: .45rem 1.05rem; 
 }
 
 .checkbox-group {
@@ -640,22 +624,17 @@ h2 em { font-style: italic; }
   cursor: pointer;
   font-size: .85rem;
   line-height: 1.5;
-  /* Martin color: var(--navy) !important; */
   color: rgba(253,251,247,.5);
   font-weight: 300;
 }
 
 .form-section-title {
-  /* Martin font-size: 1rem; */
-  font-size: .63rem; 
+  font-size: 1rem; /* Martin */
   font-weight: 500;
-  /* Martin color: var(--navy); */
   color: var(--gold);
   margin-top: 1.5rem;
   margin-bottom: 1rem;
   padding-top: 1rem;
-  /* Martin border-top: 1px solid #eee; */
-  /* border-top: 1px solid rgba(gold,.15); */
   border-top: 1px solid rgba(201,168,76,.12);
 }
 
@@ -664,13 +643,11 @@ h2 em { font-style: italic; }
   font-family: var(--sans);
   font-size: .78rem;
   font-weight: 500;
-  /* Martin letter-spacing: .12em; */
   letter-spacing: .18em;
   text-transform: uppercase;
   background: var(--gold);
   color: var(--navy);
   border: none;
-  /* Martin padding: 1.1rem 2.5rem; */
   padding: 1.1rem 3rem;
   cursor: pointer;
   transition: background .25s, transform .2s;
@@ -682,9 +659,8 @@ h2 em { font-style: italic; }
 .valuation-form-submit:hover,
 .form-submit:hover {
   background: var(--gold-light);
-  /* Martin transform: translateY(-1px); */
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(gold,.25); /* Martin */
+  box-shadow: 0 8px 24px rgba(gold,.25); 
 }
 .valuation-form-submit:disabled {
   opacity: 0.7;
@@ -712,16 +688,13 @@ h2 em { font-style: italic; }
 
 .legal-text {
   font-size: .75rem;
-  /* Martin color: #666; */
   color: rgba(253,251,247,.3);
   line-height: 1.6;
   margin-top: 1.5rem;
   padding-top: 1.5rem;
-  /* Martin border-top: 1px solid #eee; */
   border-top: 1px solid rgba(gold,.1);
 }
 .legal-text strong {
-  /* Martin color: var(--navy); */
   color: rgba(253,251,247,.5);
   font-weight: 500;
 }
