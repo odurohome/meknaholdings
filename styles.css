@@ -640,7 +640,8 @@ h2 em { font-style: italic; }
   cursor: pointer;
   font-size: .85rem;
   line-height: 1.5;
-  color: var(--navy) !important;
+  /* Martin color: var(--navy) !important; */
+  color: rgba(253,251,247,.5);
   font-weight: 300;
 }
 
