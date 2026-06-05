@@ -305,7 +305,7 @@ h2 em { font-style: italic; }
   align-items: center; justify-content: center;
   font-family: var(--serif); font-size: 4rem; font-weight: 300;
   /* Martin color: var(--gold); line-height: 1; */
-  color: rgba(245,228,64,.8); line-height: 1; 
+  color: rgba(207,190,33,.8); line-height: 1; 
   text-align: center; letter-spacing: -.02em;
 }
 .about-visual-badge {
