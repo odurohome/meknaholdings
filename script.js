@@ -6,7 +6,7 @@ const mobileMenu = document.getElementById('mobileMenu');
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active');
   mobileMenu.classList.toggle('active');
-  document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
+  // Martin document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
 });
 
 // Close menu when clicking on a link
@@ -14,7 +14,7 @@ document.querySelectorAll('.mobile-menu a').forEach(link => {
   link.addEventListener('click', () => {
     hamburger.classList.remove('active');
     mobileMenu.classList.remove('active');
-    document.body.style.overflow = 'auto';
+   // Martin document.body.style.overflow = 'auto';
   });
 });
 
@@ -23,7 +23,7 @@ document.addEventListener('click', (e) => {
   if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
     hamburger.classList.remove('active');
     mobileMenu.classList.remove('active');
-    document.body.style.overflow = 'auto';
+   // Martin document.body.style.overflow = 'auto';
   }
 });
 
