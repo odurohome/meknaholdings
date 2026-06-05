@@ -67,17 +67,17 @@ function handleContactSubmit(event) {
 }
 
 // ── BACK TO TOP BUTTON ──
-const backToTopBtn = document.getElementById('backToTop');
+const backToTopButton = document.getElementById('backToTop');
 
 window.addEventListener('scroll', () => {
   if (window.pageYOffset > 300) {
-    backToTopBtn.classList.add('visible');
+    backToTopButton.classList.add('visible');
   } else {
-    backToTopBtn.classList.remove('visible');
+    backToTopButton.classList.remove('visible');
   }
 });
 
-backToTopBtn.addEventListener('click', () => {
+backToTopButton.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
