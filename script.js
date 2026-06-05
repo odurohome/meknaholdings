@@ -4,8 +4,10 @@ const mobileMenu = document.getElementById('mobileMenu');
 
 // Toggle mobile menu on hamburger click
 hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
+  // Martin hamburger.classList.toggle('active');
+  const isActive = hamburger.classList.toggle('active');
   mobileMenu.classList.toggle('active');
+  hamburger.setAttribute('aria-expanded', isActive); // Martin
   // Martin document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
 });
 
@@ -14,6 +16,7 @@ document.querySelectorAll('.mobile-menu a').forEach(link => {
   link.addEventListener('click', () => {
     hamburger.classList.remove('active');
     mobileMenu.classList.remove('active');
+    hamburger.setAttribute('aria-expanded', 'false'); // Martin
    // Martin document.body.style.overflow = 'auto';
   });
 });
