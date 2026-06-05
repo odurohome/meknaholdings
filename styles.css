@@ -77,26 +77,38 @@ nav {
   display: none;
   flex-direction: column;
   cursor: pointer;
-  z-index: 101;
+  z-index: 102; /* Martin changed from 101 */
   gap: 5px;
   background: none;
   border: none;
   padding: 0;
+  /* Martin  from here down added */
+  min-width: 36px; min-height: 36px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  justify-content: center; 
+  align-items: center; 
 }
 .hamburger span {
+  display: block; /* Martin */
   width: 24px;
   height: 2px;
   background: var(--white);
-  transition: all .3s;
+  /* Martin transition: all .3s; */
+  transition: transform .3s ease, opacity .3s ease;
+  transform-origin: center; /* Martin */
 }
 .hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(10px, 10px);
+  /* Martin transform: rotate(45deg) translate(10px, 10px); */
+  transform: translateY(7px) rotate(45deg);
 }
 .hamburger.active span:nth-child(2) {
   opacity: 0;
+  transform: scaleX(0); /* Martin */
 }
 .hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -7px);
+  /* Martin transform: rotate(-45deg) translate(7px, -7px); */
+  transform: translateY(-7px) rotate(-45deg); 
 }
 
 /* ── MOBILE MENU ── */
