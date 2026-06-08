@@ -59,11 +59,59 @@ function handleValuationSubmit(event) {
   // Add your form submission logic here
 }
 
+/* Martin
 function handleContactSubmit(event) {
   event.preventDefault();
   console.log('Contact form submitted');
   // Add your form submission logic here
 }
+*/
+//Martin The new function I just added 
+async function handleContactSubmit(event) {
+  event.preventDefault();
+
+  const form      = event.target;
+  const btn       = document.getElementById('contactSubmitBtn');
+  const msgBox    = document.getElementById('contactFormMessage');
+
+  // Reset state
+  msgBox.className = 'form-message';
+  msgBox.style.display = 'none';
+  msgBox.textContent = '';
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  // Encode form data for Netlify
+  const data = new URLSearchParams();
+  new FormData(form).forEach((value, key) => data.append(key, value));
+
+  try {
+    const res = await fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: data.toString(),
+    });
+
+    if (res.ok) {
+      msgBox.textContent = 'Thank you — your message has been sent. We\'ll be in touch shortly.';
+      msgBox.classList.add('success');
+      msgBox.style.display = 'block';
+      form.reset();
+    } else {
+      throw new Error(`Server responded with ${res.status}`);
+    }
+  } catch (err) {
+    console.error('Contact form error:', err);
+    msgBox.textContent = 'Something went wrong. Please try again or email us directly at info@meknaholdings.com.';
+    msgBox.classList.add('error');
+    msgBox.style.display = 'block';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Send Message';
+  }
+}
+
+
 
 // ── BACK TO TOP BUTTON ──
 const backToTopButton = document.getElementById('backToTop');
