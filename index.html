@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Mekna Holdings Inc. — Premium Real Estate Investment, Acquisition & Portfolio Management. Strategic real estate solutions for discerning clients.">
   <meta name="theme-color" content="#0a1628">
- <!-- Martin <meta name="apple-mobile-web-app-capable" content="yes"> -->
   <meta name="mobile-web-app-capable" content="yes">
   <title>Mekna Holdings Inc. — Premium Real Estate</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -70,20 +69,16 @@
         </div>
       </div>
 
-     <!-- Martin <div class="form-row"> -->
-        <div class="form-group">
+       <div class="form-group">
           <label for="val-email">Email <span class="required">*</span></label>
           <input id="val-email" type="email" placeholder="john@example.com" aria-describedby="val-email-help" required>
          </div>
-     <!-- </div> -->
-
-     <!-- Martin <div class="form-row">  -->
+        
         <div class="form-group">
           <label for="val-address">Address <span class="required">*</span></label>
           <input id="val-address" type="text" placeholder="123 Main Street" required>
         </div>
-     <!-- </div> -->
-
+     
       <!-- Location -->
       <div class="form-row-three">
         <div class="form-group">
@@ -324,17 +319,17 @@
       <div class="service-card">
         <div class="service-icon">💼</div>
         <h3>Portfolio Management</h3>
-        <p>Comprehensive management of multi-property portfolios with regular performance reviews and strategic rebalancing..</p>
+        <p>Comprehensive management of multi-property portfolios with regular performance reviews and strategic rebalancing.</p>
       </div>
       <div class="service-card">
         <div class="service-icon">📋</div>
         <h3>Sales & Acquisition</h3>
-        <p>Expert guidance on buying and selling properties, ensuring maximum value and seamless transactions from offer to close..</p>
+        <p>Expert guidance on buying and selling properties, ensuring maximum value and seamless transactions from offer to close.</p>
       </div>
       <div class="service-card">
         <div class="service-icon">🔄</div>
         <h3>Leasing & Rental</h3>
-        <p>Full-service leasing solutions for landlords and tenants, including tenant sourcing, screening, and lease management..</p>
+        <p>Full-service leasing solutions for landlords and tenants, including tenant sourcing, screening, and lease management.</p>
       </div>
     </div>
   </div>
@@ -618,42 +613,6 @@
     <a href="#">Sitemap</a>
   </div>
 </footer>
-  <!--
-<script>
-  // Valuation Modal
-  const valuationModal = document.getElementById('valuationModal');
-  const valuationModalClose = document.getElementById('valuationModalClose');
-  
-  // Open modal when clicking "Get Home Valuation" buttons
-  document.querySelectorAll('[data-open-valuation]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      valuationModal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    });
-  });
-  
-  // Close modal
-  valuationModalClose.addEventListener('click', () => {
-    valuationModal.classList.remove('active');
-    document.body.style.overflow = 'auto';
-  });
-  
-  // Close on background click
-  valuationModal.addEventListener('click', (e) => {
-    if (e.target === valuationModal) {
-      valuationModal.classList.remove('active');
-      document.body.style.overflow = 'auto';
-    }
-  });
-  
-  // Form submission handler
-  function handleValuationSubmit(event) {
-    event.preventDefault();
-    console.log('Form submitted');
-    // Add your form submission logic here
-  }
-</script>
-  -->
 <script src="script.js"></script>
 </body>
 </html>
