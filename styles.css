@@ -77,12 +77,11 @@ nav {
   display: none;
   flex-direction: column;
   cursor: pointer;
-  z-index: 102; /* Martin changed from 101 */
+  z-index: 102; 
   gap: 5px;
   background: none;
   border: none;
   padding: 0;
-  /* Martin  from here down added */
   min-width: 36px; min-height: 36px;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
@@ -90,24 +89,21 @@ nav {
   align-items: center; 
 }
 .hamburger span {
-  display: block; /* Martin */
+  display: block; 
   width: 24px;
   height: 2px;
   background: var(--white);
-  /* Martin transition: all .3s; */
   transition: transform .3s ease, opacity .3s ease;
-  transform-origin: center; /* Martin */
+  transform-origin: center; 
 }
 .hamburger.active span:nth-child(1) {
-  /* Martin transform: rotate(45deg) translate(10px, 10px); */
   transform: translateY(7px) rotate(45deg);
 }
 .hamburger.active span:nth-child(2) {
   opacity: 0;
-  transform: scaleX(0); /* Martin */
+  transform: scaleX(0); 
 }
 .hamburger.active span:nth-child(3) {
-  /* Martin transform: rotate(-45deg) translate(7px, -7px); */
   transform: translateY(-7px) rotate(-45deg); 
 }
 
@@ -299,7 +295,6 @@ h2 em { font-style: italic; }
 
 /* ── ABOUT ── */
 #about { background: var(--white); }
-/* Martin .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; max-width: 1100px; margin: 0 auto; } */
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; max-width: 1300px; margin: 0 auto; }
 .about-visual {
   position: relative; aspect-ratio: 4/5;
@@ -316,7 +311,6 @@ h2 em { font-style: italic; }
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
   font-family: var(--serif); font-size: 4rem; font-weight: 300;
-  /* Martin color: var(--gold); line-height: 1; */
   color: rgba(177,162,19,.98); line-height: 1; 
   text-align: center; letter-spacing: -.02em;
 }
@@ -534,7 +528,6 @@ h2 em { font-style: italic; }
   font-weight: 500;
   color: rgba(253,251,247,.45);
   letter-spacing: .05em;
-  /* text-transform: uppercase;  Martin */
 }
 .form-group label .required {
   color: var(--gold);
@@ -642,7 +635,7 @@ h2 em { font-style: italic; }
 }
 
 .form-section-title {
-  font-size: 1rem; /* Martin */
+  font-size: 1rem; 
   font-weight: 500;
   color: var(--gold);
   margin-top: 1.5rem;
