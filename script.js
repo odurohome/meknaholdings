@@ -4,11 +4,9 @@ const mobileMenu = document.getElementById('mobileMenu');
 
 // Toggle mobile menu on hamburger click
 hamburger.addEventListener('click', () => {
-  // Martin hamburger.classList.toggle('active');
   const isActive = hamburger.classList.toggle('active');
   mobileMenu.classList.toggle('active');
-  hamburger.setAttribute('aria-expanded', isActive); // Martin
-  // Martin document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
+  hamburger.setAttribute('aria-expanded', isActive); 
 });
 
 // Close menu when clicking on a link
@@ -16,8 +14,7 @@ document.querySelectorAll('.mobile-menu a').forEach(link => {
   link.addEventListener('click', () => {
     hamburger.classList.remove('active');
     mobileMenu.classList.remove('active');
-    hamburger.setAttribute('aria-expanded', 'false'); // Martin
-   // Martin document.body.style.overflow = 'auto';
+    hamburger.setAttribute('aria-expanded', 'false'); 
   });
 });
 
@@ -26,8 +23,7 @@ document.addEventListener('click', (e) => {
   if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
     hamburger.classList.remove('active');
     mobileMenu.classList.remove('active');
-   // Martin document.body.style.overflow = 'auto';
-  }
+   }
 });
 
 // ── VALUATION MODAL ──
