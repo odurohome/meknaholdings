@@ -860,8 +860,7 @@ footer {
   left: 0;
   right: 0;
   bottom: 0;
-  /* Martin background: rgba(10, 22, 40, 0.8); */
-  background: rgba(4, 10, 20, 0.85);
+  background: rgba(10, 22, 40, 0.8);
   backdrop-filter: blur(8px);
   z-index: 200;
   align-items: center;
