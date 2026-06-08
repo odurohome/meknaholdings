@@ -102,7 +102,7 @@ async function handleContactSubmit(event) {
     }
   } catch (err) {
     console.error('Contact form error:', err);
-    msgBox.textContent = 'Something went wrong. Please try again or email us directly at info@meknaholdings.com.';
+    msgBox.textContent = 'Something went wrong. Please try again or email us directly at meknaholdings@gmail.com.';
     msgBox.classList.add('error');
     msgBox.style.display = 'block';
   } finally {
