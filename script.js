@@ -1,3 +1,12 @@
+// -- Martin --
+// ── EMAILJS CONFIG ──
+const EMAILJS_PUBLIC_KEY  ='LGlZbQW2Bst65MOr_';
+const EMAILJS_SERVICE_ID  ='service_ve7dmzk';
+const EMAILJS_TEMPLATE_ID ='__ejs-test-mail-service__';
+
+emailjs.init({publicKey: EMAILJS_PUBLIC_KEY});
+
+
 // ── HAMBURGER MENU ──
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
@@ -66,8 +75,10 @@ function handleContactSubmit(event) {
   // Add your form submission logic here
 }
 */
+
 //Martin The new function I just added 
-async function handleContactSubmit(event) {
+/*
+ async function handleContactSubmit(event) {
   event.preventDefault();
 
   const form      = event.target;
@@ -110,7 +121,49 @@ async function handleContactSubmit(event) {
     btn.textContent = 'Send Message';
   }
 }
+*/
 
+async function handleContactSubmit(event) {
+  event.preventDefault();
+  const form   = event.target;
+  const btn    = document.getElementById('contactSubmitBtn');
+  const msgBox = document.getElementById('contactFormMessage');
+ 
+  msgBox.className     = 'form-message';
+  msgBox.style.display = 'none';
+  msgBox.textContent   = '';
+  btn.disabled         = true;
+  btn.textContent      = 'Sending…';
+ 
+  const params = {
+    from_name:    form['contact-name'].value.trim(),
+    from_email:   form['contact-email'].value.trim(),
+    phone:        form['contact-phone'].value.trim()
+                    || 'Not provided',
+    enquiry_type: form['enquiry-type'].value,
+    message:      form['contact-message'].value.trim(),
+    reply_to:     form['contact-email'].value.trim(),
+  };
+ 
+  try {
+    await emailjs.send(EMAILJS_SERVICE_ID,EMAILJS_TEMPLATE_ID,params);
+    msgBox.textContent ="Thank you — we'll be in touch shortly.";
+    msgBox.classList.add('success');
+    msgBox.style.display = 'block';
+    form.reset();
+    msgBox.scrollIntoView({behavior: 'smooth', block: 'nearest'});
+  } 
+  catch (err) {
+    console.error('EmailJS error:', err);
+    msgBox.textContent ='Something went wrong. Please email us at' + ' info@meknaholdings.com.';
+    msgBox.classList.add('error');
+    msgBox.style.display = 'block';
+  } 
+  finally {
+    btn.disabled    = false;
+    btn.textContent = 'Send Message';
+  }
+}
 
 
 // ── BACK TO TOP BUTTON ──
