@@ -2,7 +2,7 @@
 // ── EMAILJS CONFIG ──
 const EMAILJS_PUBLIC_KEY  ='LGlZbQW2Bst65MOr_';
 const EMAILJS_SERVICE_ID  ='service_ve7dmzk';
-const EMAILJS_TEMPLATE_ID ='__ejs-test-mail-service__';
+const EMAILJS_TEMPLATE_ID ='template_96ax2ja';
 
 emailjs.init({publicKey: EMAILJS_PUBLIC_KEY});
 
@@ -155,7 +155,7 @@ async function handleContactSubmit(event) {
   } 
   catch (err) {
     console.error('EmailJS error:', err);
-    msgBox.textContent ='Something went wrong. Please email us at' + ' info1@meknaholdings.com.';
+    msgBox.textContent ='Something went wrong. Please email us at' + ' info@meknaholdings.com.';
     msgBox.classList.add('error');
     msgBox.style.display = 'block';
   } 
