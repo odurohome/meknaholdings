@@ -1,8 +1,8 @@
 // -- Martin --
 // ── EMAILJS CONFIG ──
-const EMAILJS_PUBLIC_KEY  =LGlZbQW2Bst65MOr_;
-const EMAILJS_SERVICE_ID  =service_ve7dmzk;
-const EMAILJS_TEMPLATE_ID =__ejs-test-mail-service__;
+const EMAILJS_PUBLIC_KEY  ='LGlZbQW2Bst65MOr_';
+const EMAILJS_SERVICE_ID  ='service_ve7dmzk';
+const EMAILJS_TEMPLATE_ID ='__ejs-test-mail-service__';
 
 emailjs.init({publicKey: EMAILJS_PUBLIC_KEY});
 
